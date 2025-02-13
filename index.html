@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="./styles/styles.css" >
+  <title>Valentine's Love Letter</title>
+</head>
+<body>
+	<div class="top-block">
+		<div class="block">Block</div>
+		<img id="cute" src="./image/giphy.gif" width="100" height="100" alt="cute image" />
+		<button class="btn">PLEASE CLICK ME!</button>
+	</div>
+	
+	<div class="letter" id="loveLetter">
+		<h1 style="color: red; text-shadow: 2px 2px white;">To My Dearest Beverly,</h1>
+		<p>"Happy Valentine’s Day, lablab my chinita! You are the best part of my life, and I feel incredibly lucky to have you by my side.</p>
+		<p>I love everything about you—your smile, your heart, and the way you love me.</p>
+		<p>Forever grateful for you, my love." - Diko Lleve <span>&#10084;&#10084;&#10084;</span></p>
+		<div class="background-image" id="backgroundImage"></div>
+	</div>
+  <script type="text/javascript">
+    const letter = document.getElementById("loveLetter");
+	const handleClick = document.querySelector(".btn");
+	const topBlock = document.querySelector(".top-block");
+	console.log(topBlock);
+	const backgroundImage = document.getElementById("backgroundImage");
+	
+	handleClick.addEventListener("click", () => {
+		letter.classList.add("show");
+		//handleClick.style.display = "none";
+		topBlock.style.display = "none";
+		
+		const paragraphs = document.querySelectorAll(".letter p");
+		paragraphs[0].style.animationDelay = "2s";
+		paragraphs[1].style.animationDelay = "4s";
+		paragraphs[2].style.animationDelay = "6s";
+		
+		setTimeout(() => {
+			backgroundImage.style.opacity = 1;
+		}, 8000);
+	});	
+  </script>
+
+</body>
+</html>
